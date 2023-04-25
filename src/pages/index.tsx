@@ -1,7 +1,11 @@
-export default function Home() {
+import { Button } from '@mantine/core'
+
+const Home = () => {
     return (
-        <p>
-            hi
-        </p>
+        <Button>
+            Hi
+        </Button>
     )
 }
+
+export default Home
