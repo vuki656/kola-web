@@ -14,3 +14,7 @@ next-env.d.ts
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+# Caches
+.eslintcache
+.cspellcache
