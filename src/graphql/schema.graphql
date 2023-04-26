@@ -1,0 +1,110 @@
+scalar DateTime
+
+scalar NonPositiveFloat
+
+scalar NonNegativeFloat
+
+input ListingArgs {
+    id: ID!
+}
+
+input CreateListingInput {
+    authorId: ID!
+    description: String!
+    price: NonNegativeFloat!
+    title: String!
+}
+
+input UpdateListingInput {
+    description: String!
+    id: ID!
+    price: NonNegativeFloat!
+    title: String!
+}
+
+input DeleteListingInput {
+    id: ID!
+}
+
+type Mutation {
+    createListing(input: CreateListingInput!): CreateListingPayload!
+    deleteListing(input: DeleteListingInput!): DeleteListingPayload!
+    updateListing(input: UpdateListingInput!): UpdateListingPayload!
+    createUser(input: CreateUserInput!): CreateUserPayload!
+    deleteUser(input: DeleteUserInput!): DeleteUserPayload!
+    updateUser(input: UpdateUserInput!): UpdateUserPayload!
+}
+
+type CreateListingPayload {
+    listing: Listing!
+}
+
+type UpdateListingPayload {
+    listing: Listing!
+}
+
+type DeleteListingPayload {
+    listing: Listing!
+}
+
+type Query {
+    listing(args: ListingArgs!): Listing!
+    listings: [Listing!]!
+    user(args: UserArgs!): User!
+    users: [User!]!
+}
+
+type Listing {
+    author: User!
+    createdAt: DateTime!
+    description: String!
+    id: ID!
+    price: NonNegativeFloat!
+    title: String!
+}
+
+input UserArgs {
+    id: ID!
+}
+
+input CreateUserInput {
+    email: String!
+    firstName: String!
+    lastName: String!
+}
+
+input UpdateUserInput {
+    email: String!
+    firstName: String!
+    id: ID!
+    lastName: String!
+}
+
+input DeleteUserInput {
+    id: ID!
+}
+
+type CreateUserPayload {
+    user: User!
+}
+
+type DeleteUserPayload {
+    user: User!
+}
+
+type UpdateUserPayload {
+    user: User!
+}
+
+type User {
+    email: String!
+    firstName: String!
+    id: ID!
+    lastName: String!
+    listings: [Listing!]!
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+}
