@@ -1,6 +1,13 @@
+import env from '@/shared/env'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { MantineProvider } from '@mantine/core'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+
+const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    uri: env.API_URL,
+})
 
 const App = (props: AppProps) => {
     const { Component, pageProps } = props
@@ -23,8 +30,10 @@ const App = (props: AppProps) => {
                     colorScheme: 'light',
                 }}
             >
-                <Component {...pageProps} />
-            </MantineProvider>
+                <ApolloProvider client={client}>
+                    <Component {...pageProps} />
+                </ApolloProvider>
+            </MantineProvider >
         </>
     )
 }
