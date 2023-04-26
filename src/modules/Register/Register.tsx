@@ -22,6 +22,7 @@ import { registerFormValidation } from './Register.validation'
 
 import { useCreateUserMutation } from '@/graphql/types.generated'
 import { extractFormFieldErrors } from '@/shared/utils'
+import Link from 'next/link'
 
 const ICON_SIZE = 17
 
@@ -117,6 +118,11 @@ export const Register = () => {
                         >
                             Register
                         </Button>
+                        <Link href="/login">
+                            <Text size='xs' align="center" color='gray.7'>
+                                Already have an account? Login
+                            </Text>
+                        </Link>
                     </Stack>
                 </Paper>
             </form>
