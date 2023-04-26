@@ -1,7 +1,5 @@
 scalar DateTime
 
-scalar NonPositiveFloat
-
 scalar NonNegativeFloat
 
 input ListingArgs {
@@ -71,6 +69,7 @@ input CreateUserInput {
     email: String!
     firstName: String!
     lastName: String!
+    password: String!
 }
 
 input UpdateUserInput {

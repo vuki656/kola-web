@@ -3,5 +3,5 @@
     "cache": {
         "useCache": true
     },
-    "ignoreWords": ["rimac", "loglevel", "packagerc", "mantine"]
+    "ignoreWords": ["rimac", "loglevel", "packagerc", "mantine", "codegen", "tabler", "hookform"]
 }

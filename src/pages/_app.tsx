@@ -1,16 +1,25 @@
-import env from '@/shared/env'
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { ApolloProvider } from '@apollo/client'
 import { MantineProvider } from '@mantine/core'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
-const client = new ApolloClient({
-    cache: new InMemoryCache(),
-    uri: env.API_URL,
-})
+import {
+    AppRoot,
+    GlobalStyles,
+} from '@/components'
+import { initializeApollo } from '@/shared'
+
+const apolloClient = initializeApollo()
 
 const App = (props: AppProps) => {
     const { Component, pageProps } = props
+
+    const router = useRouter()
+
+    const isAppAppRoute = router.pathname !== '/' &&
+        !router.pathname.startsWith('/login') &&
+        !router.pathname.startsWith('/register')
 
     return (
         <>
@@ -23,17 +32,22 @@ const App = (props: AppProps) => {
                     content="minimum-scale=1, initial-scale=1, width=device-width"
                 />
             </Head>
-            <MantineProvider
-                withGlobalStyles={true}
-                withNormalizeCSS={true}
-                theme={{
-                    colorScheme: 'light',
-                }}
-            >
-                <ApolloProvider client={client}>
-                    <Component {...pageProps} />
-                </ApolloProvider>
-            </MantineProvider >
+            <ApolloProvider client={apolloClient}>
+                <MantineProvider
+                    withGlobalStyles={true}
+                    withNormalizeCSS={true}
+                    theme={{
+                        colorScheme: 'light',
+                    }}
+                >
+                    <GlobalStyles />
+                    {isAppAppRoute ? (
+                        <AppRoot>
+                            <Component {...pageProps} />
+                        </AppRoot>
+                    ) : <Component {...pageProps} />}
+                </MantineProvider>
+            </ApolloProvider>
         </>
     )
 }

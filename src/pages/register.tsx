@@ -1,7 +1,9 @@
-const Register = () => {
+import { Register } from '@/modules'
+
+const RegisterPage = () => {
     return (
-        <p>hi</p>
+        <Register />
     )
 }
 
-export default Register
+export default RegisterPage
