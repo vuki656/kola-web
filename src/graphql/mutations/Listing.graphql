@@ -1,0 +1,7 @@
+mutation CreateListing($input: CreateListingInput!) {
+    createListing(input: $input) {
+        listing {
+            ...ListingPayload
+        }
+    }
+}

@@ -22,9 +22,8 @@ import type { RegisterFormValueType } from './Register.types'
 import { registerFormValidation } from './Register.validation'
 
 import { useCreateUserMutation } from '@/graphql/types.generated'
+import { FORM_ICON_SIZE_PX } from '@/shared/constants'
 import { extractFormFieldErrors } from '@/shared/utils'
-
-const ICON_SIZE = 17
 
 export const Register = () => {
     const router = useRouter()
@@ -82,33 +81,33 @@ export const Register = () => {
                         <TextInput
                             {...register('firstName')}
                             {...extractFormFieldErrors(formState.errors.firstName)}
-                            icon={<IconId size={ICON_SIZE} />}
+                            icon={<IconId size={FORM_ICON_SIZE_PX} />}
                             placeholder="First Name"
                         />
                         <TextInput
                             {...register('lastName')}
                             {...extractFormFieldErrors(formState.errors.lastName)}
-                            icon={<IconId size={ICON_SIZE} />}
+                            icon={<IconId size={FORM_ICON_SIZE_PX} />}
                             placeholder="Last Name"
                         />
                         <TextInput
                             {...register('email')}
                             {...extractFormFieldErrors(formState.errors.email)}
-                            icon={<IconAt size={ICON_SIZE} />}
+                            icon={<IconAt size={FORM_ICON_SIZE_PX} />}
                             placeholder="Email"
                             type="email"
                         />
                         <PasswordInput
                             {...register('password')}
                             {...extractFormFieldErrors(formState.errors.password)}
-                            icon={<IconPassword size={ICON_SIZE} />}
+                            icon={<IconPassword size={FORM_ICON_SIZE_PX} />}
                             placeholder="Password"
                             type="password"
                         />
                         <PasswordInput
                             {...register('passwordConfirmation')}
                             {...extractFormFieldErrors(formState.errors.passwordConfirmation)}
-                            icon={<IconPassword size={ICON_SIZE} />}
+                            icon={<IconPassword size={FORM_ICON_SIZE_PX} />}
                             placeholder="Password Confirmation"
                             type="password"
                         />

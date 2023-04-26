@@ -21,9 +21,8 @@ import type { LoginFormValueType } from './Login.types'
 import { loginFormValidation } from './Login.validation'
 
 import { useLoginUserMutation } from '@/graphql/types.generated'
+import { FORM_ICON_SIZE_PX } from '@/shared/constants'
 import { extractFormFieldErrors } from '@/shared/utils'
-
-const ICON_SIZE = 17
 
 export const Login = () => {
     const router = useRouter()
@@ -46,7 +45,7 @@ export const Login = () => {
     })
 
     const onSubmit = (formValue: LoginFormValueType) => {
-        loginUserMutation({
+        void loginUserMutation({
             variables: {
                 input: {
                     email: formValue.email,
@@ -79,14 +78,14 @@ export const Login = () => {
                         <TextInput
                             {...register('email')}
                             {...extractFormFieldErrors(formState.errors.email)}
-                            icon={<IconAt size={ICON_SIZE} />}
+                            icon={<IconAt size={FORM_ICON_SIZE_PX} />}
                             placeholder="Email"
                             type="email"
                         />
                         <PasswordInput
                             {...register('password')}
                             {...extractFormFieldErrors(formState.errors.password)}
-                            icon={<IconPassword size={ICON_SIZE} />}
+                            icon={<IconPassword size={FORM_ICON_SIZE_PX} />}
                             placeholder="Password"
                         />
                         <Button

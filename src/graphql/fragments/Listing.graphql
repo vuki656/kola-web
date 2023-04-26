@@ -1,0 +1,6 @@
+fragment ListingPayload on Listing {
+    id
+    title
+    description
+    price
+}

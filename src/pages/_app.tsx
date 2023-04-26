@@ -16,11 +16,11 @@ const apolloClient = initializeApollo()
 const App = (props: AppProps) => {
     const { Component, pageProps } = props
 
-    const router = useRouter()
+    const { pathname } = useRouter()
 
-    const isAppAppRoute = router.pathname !== '/' &&
-        !router.pathname.startsWith('/login') &&
-        !router.pathname.startsWith('/register')
+    const isAppAppRoute =
+        !pathname.startsWith('/login') &&
+        !pathname.startsWith('/register')
 
     return (
         <>

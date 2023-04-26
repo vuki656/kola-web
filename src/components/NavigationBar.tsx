@@ -5,6 +5,8 @@ import {
 } from '@mantine/core'
 import { IconCar } from '@tabler/icons-react'
 
+import { CreateListingDialog } from './CreateListingDialog'
+
 export const NavigationBar = () => {
     return (
         <Paper shadow="sm">
@@ -21,6 +23,7 @@ export const NavigationBar = () => {
                         KOLA
                     </Text>
                 </Group>
+                <CreateListingDialog />
             </Group>
         </Paper>
     )
