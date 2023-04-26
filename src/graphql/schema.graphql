@@ -30,6 +30,7 @@ type Mutation {
     updateListing(input: UpdateListingInput!): UpdateListingPayload!
     createUser(input: CreateUserInput!): CreateUserPayload!
     deleteUser(input: DeleteUserInput!): DeleteUserPayload!
+    loginUser(input: LoginUserInput!): LoginUserPayload!
     updateUser(input: UpdateUserInput!): UpdateUserPayload!
 }
 
@@ -83,6 +84,11 @@ input DeleteUserInput {
     id: ID!
 }
 
+input LoginUserInput {
+    email: String!
+    password: String!
+}
+
 type CreateUserPayload {
     user: User!
 }
@@ -93,6 +99,10 @@ type DeleteUserPayload {
 
 type UpdateUserPayload {
     user: User!
+}
+
+type LoginUserPayload {
+    token: String!
 }
 
 type User {

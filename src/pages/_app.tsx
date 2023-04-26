@@ -1,5 +1,6 @@
 import { ApolloProvider } from '@apollo/client'
 import { MantineProvider } from '@mantine/core'
+import { Notifications } from '@mantine/notifications'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -41,6 +42,7 @@ const App = (props: AppProps) => {
                     }}
                 >
                     <GlobalStyles />
+                    <Notifications />
                     {isAppAppRoute ? (
                         <AppRoot>
                             <Component {...pageProps} />

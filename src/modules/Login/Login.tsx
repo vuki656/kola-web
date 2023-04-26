@@ -11,48 +11,45 @@ import {
 import { showNotification } from '@mantine/notifications'
 import {
     IconAt,
-    IconId,
     IconPassword,
 } from '@tabler/icons-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
 
-import type { RegisterFormValueType } from './Register.types'
-import { registerFormValidation } from './Register.validation'
+import type { LoginFormValueType } from './Login.types'
+import { loginFormValidation } from './Login.validation'
 
-import { useCreateUserMutation } from '@/graphql/types.generated'
+import { useLoginUserMutation } from '@/graphql/types.generated'
 import { extractFormFieldErrors } from '@/shared/utils'
 
 const ICON_SIZE = 17
 
-export const Register = () => {
+export const Login = () => {
     const router = useRouter()
 
-    const [createUserMutation, { loading }] = useCreateUserMutation({
+    const [loginUserMutation, { loading }] = useLoginUserMutation({
         onCompleted: () => {
             void router.push('/')
         },
         onError: () => {
             showNotification({
                 color: 'red',
-                message: 'Unable to register, try again.',
+                message: 'Wrong username or password',
                 title: 'Error',
             })
         },
     })
 
-    const { formState, handleSubmit, register } = useForm<RegisterFormValueType>({
-        resolver: zodResolver(registerFormValidation),
+    const { formState, handleSubmit, register } = useForm<LoginFormValueType>({
+        resolver: zodResolver(loginFormValidation),
     })
 
-    const onSubmit = (formValue: RegisterFormValueType) => {
-        void createUserMutation({
+    const onSubmit = (formValue: LoginFormValueType) => {
+        loginUserMutation({
             variables: {
                 input: {
                     email: formValue.email,
-                    firstName: formValue.firstName,
-                    lastName: formValue.lastName,
                     password: formValue.password,
                 },
             },
@@ -77,20 +74,8 @@ export const Register = () => {
                             size="lg"
                             weight="bold"
                         >
-                            Register
+                            Login
                         </Text>
-                        <TextInput
-                            {...register('firstName')}
-                            {...extractFormFieldErrors(formState.errors.firstName)}
-                            icon={<IconId size={ICON_SIZE} />}
-                            placeholder="First Name"
-                        />
-                        <TextInput
-                            {...register('lastName')}
-                            {...extractFormFieldErrors(formState.errors.lastName)}
-                            icon={<IconId size={ICON_SIZE} />}
-                            placeholder="Last Name"
-                        />
                         <TextInput
                             {...register('email')}
                             {...extractFormFieldErrors(formState.errors.email)}
@@ -103,28 +88,20 @@ export const Register = () => {
                             {...extractFormFieldErrors(formState.errors.password)}
                             icon={<IconPassword size={ICON_SIZE} />}
                             placeholder="Password"
-                            type="password"
-                        />
-                        <PasswordInput
-                            {...register('passwordConfirmation')}
-                            {...extractFormFieldErrors(formState.errors.passwordConfirmation)}
-                            icon={<IconPassword size={ICON_SIZE} />}
-                            placeholder="Password Confirmation"
-                            type="password"
                         />
                         <Button
                             type="submit"
                             loading={loading}
                         >
-                            Register
+                            Login
                         </Button>
-                        <Link href="/login">
+                        <Link href="/register">
                             <Text
                                 size="xs"
                                 align="center"
                                 color="gray.7"
                             >
-                                Already have an account? Login
+                                Don't have an account? Register
                             </Text>
                         </Link>
                     </Stack>

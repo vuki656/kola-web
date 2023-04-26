@@ -5,3 +5,9 @@ mutation CreateUser($input: CreateUserInput!) {
         }
     }
 }
+
+mutation LoginUser($input: LoginUserInput!) {
+    loginUser(input: $input) {
+        token
+    }
+}
