@@ -3,6 +3,7 @@ import {
     Button,
     Center,
     Paper,
+    PasswordInput,
     Stack,
     Text,
     TextInput,
@@ -96,14 +97,14 @@ export const Register = () => {
                             placeholder="Email"
                             type="email"
                         />
-                        <TextInput
+                        <PasswordInput
                             {...register('password')}
                             {...extractFormFieldErrors(formState.errors.password)}
                             icon={<IconPassword size={ICON_SIZE} />}
                             placeholder="Password"
                             type="password"
                         />
-                        <TextInput
+                        <PasswordInput
                             {...register('passwordConfirmation')}
                             {...extractFormFieldErrors(formState.errors.passwordConfirmation)}
                             icon={<IconPassword size={ICON_SIZE} />}
