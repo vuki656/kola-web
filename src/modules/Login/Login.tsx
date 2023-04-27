@@ -13,6 +13,7 @@ import {
     IconAt,
     IconPassword,
 } from '@tabler/icons-react'
+import { setCookie } from 'cookies-next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
@@ -21,14 +22,19 @@ import type { LoginFormValueType } from './Login.types'
 import { loginFormValidation } from './Login.validation'
 
 import { useLoginUserMutation } from '@/graphql/types.generated'
-import { FORM_ICON_SIZE_PX } from '@/shared/constants'
+import {
+    COOKIE_TOKEN_NAME,
+    FORM_ICON_SIZE_PX,
+} from '@/shared/constants'
 import { extractFormFieldErrors } from '@/shared/utils'
 
 export const Login = () => {
     const router = useRouter()
 
     const [loginUserMutation, { loading }] = useLoginUserMutation({
-        onCompleted: () => {
+        onCompleted: (response) => {
+            setCookie(COOKIE_TOKEN_NAME, response.loginUser.token)
+
             void router.push('/')
         },
         onError: () => {

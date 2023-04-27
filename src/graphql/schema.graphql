@@ -31,6 +31,7 @@ type Mutation {
     createUser(input: CreateUserInput!): CreateUserPayload!
     deleteUser(input: DeleteUserInput!): DeleteUserPayload!
     loginUser(input: LoginUserInput!): LoginUserPayload!
+    logoutUser: LogoutUserPayload!
     updateUser(input: UpdateUserInput!): UpdateUserPayload!
 }
 
@@ -49,6 +50,7 @@ type DeleteListingPayload {
 type Query {
     listing(args: ListingArgs!): Listing!
     listings: [Listing!]!
+    currentUser: User
     user(args: UserArgs!): User!
     users: [User!]!
 }
@@ -103,6 +105,10 @@ type UpdateUserPayload {
 
 type LoginUserPayload {
     token: String!
+}
+
+type LogoutUserPayload {
+    success: Boolean!
 }
 
 type User {

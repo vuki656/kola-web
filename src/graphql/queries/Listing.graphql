@@ -1,0 +1,5 @@
+query GetListings {
+    listings {
+        ...ListingPayload
+    }
+}
