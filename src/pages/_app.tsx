@@ -9,11 +9,12 @@ import {
     AppRoot,
     GlobalStyles,
 } from '@/components'
-import { initializeApollo } from '@/shared'
+import type { WithAuthenticationProps } from '@/shared/utils'
+import { initializeApollo } from '@/shared/utils'
 
 const apolloClient = initializeApollo()
 
-const App = (props: AppProps) => {
+const App = (props: AppProps<WithAuthenticationProps>) => {
     const { Component, pageProps } = props
 
     const { pathname } = useRouter()

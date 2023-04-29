@@ -56,7 +56,6 @@ export const CreateListingDialog = () => {
         void createListingMutation({
             variables: {
                 input: {
-                    authorId: 'sdf', // TODO
                     description: formValue.description,
                     price: formValue.price,
                     title: formValue.title,

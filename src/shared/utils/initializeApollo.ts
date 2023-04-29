@@ -1,16 +1,17 @@
-import { onError } from "@apollo/client/link/error";
 import {
     ApolloClient,
     createHttpLink,
-    InMemoryCache,
     from,
+    InMemoryCache,
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
+import { onError } from '@apollo/client/link/error'
 import { getCookie } from 'cookies-next'
 
-import { COOKIE_TOKEN_NAME } from './constants'
-import { isServerSide } from './utils'
-import { logger } from "./logger";
+import { COOKIE_TOKEN_NAME } from '../constants'
+import { logger } from '../logger'
+
+import { isServerSide } from './isServerSide'
 
 export const initializeApollo = (token?: string) => {
     const httpLink = createHttpLink({
@@ -29,20 +30,22 @@ export const initializeApollo = (token?: string) => {
         }
     })
 
-    const errorLink = onError(({ graphQLErrors, networkError }) => {
+    const errorLink = onError(({ graphQLErrors, networkError, operation }) => {
         if (graphQLErrors) {
             graphQLErrors.forEach((graphQLError) => {
                 logger.error({
-                    message: "Graphql Error",
-                    error: graphQLError
+                    error: graphQLError,
+                    message: 'Graphql Error',
+                    operation,
                 })
             })
         }
 
         if (networkError) {
             logger.error({
-                message: "Network Error",
-                error: networkError
+                error: networkError,
+                message: 'Network Error',
+                operation,
             })
         }
     })
@@ -52,7 +55,7 @@ export const initializeApollo = (token?: string) => {
         link: from([
             errorLink,
             authLink,
-            httpLink
+            httpLink,
         ]),
         ssrMode: isServerSide(),
     })

@@ -1,9 +1,9 @@
-import pino from "pino"
+import pino from 'pino'
 
 export const logger = pino({
     mixin: (_, level) => {
         return {
-            severity: pino.levels.labels[level]?.toUpperCase(),
+            severity: pino.levels.labels[level].toUpperCase(),
         }
     },
 })
