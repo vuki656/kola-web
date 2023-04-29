@@ -1,14 +1,16 @@
+import { onError } from "@apollo/client/link/error";
 import {
     ApolloClient,
     createHttpLink,
     InMemoryCache,
+    from,
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { getCookie } from 'cookies-next'
 
 import { COOKIE_TOKEN_NAME } from './constants'
-
-const IS_SSR = typeof window !== 'undefined'
+import { isServerSide } from './utils'
+import { logger } from "./logger";
 
 export const initializeApollo = (token?: string) => {
     const httpLink = createHttpLink({
@@ -17,22 +19,41 @@ export const initializeApollo = (token?: string) => {
     })
 
     const authLink = setContext((_, { headers }) => {
-        const cookie = getCookie(COOKIE_TOKEN_NAME)
-
-        console.log('token', token)
-        console.log('cookie: ', cookie)
+        const cookieToken = getCookie(COOKIE_TOKEN_NAME)
 
         return {
             headers: {
                 ...headers,
-                cookie: `${COOKIE_TOKEN_NAME}=${cookie ?? token}`,
+                cookie: `${COOKIE_TOKEN_NAME}=${cookieToken ?? token}`,
             },
+        }
+    })
+
+    const errorLink = onError(({ graphQLErrors, networkError }) => {
+        if (graphQLErrors) {
+            graphQLErrors.forEach((graphQLError) => {
+                logger.error({
+                    message: "Graphql Error",
+                    error: graphQLError
+                })
+            })
+        }
+
+        if (networkError) {
+            logger.error({
+                message: "Network Error",
+                error: networkError
+            })
         }
     })
 
     return new ApolloClient({
         cache: new InMemoryCache(),
-        link: authLink.concat(httpLink),
-        ssrMode: IS_SSR,
+        link: from([
+            errorLink,
+            authLink,
+            httpLink
+        ]),
+        ssrMode: isServerSide(),
     })
 }
