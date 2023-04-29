@@ -10,7 +10,11 @@ import {
     GlobalStyles,
 } from '@/components'
 import type { WithAuthenticationProps } from '@/shared/utils'
-import { initializeApollo } from '@/shared/utils'
+import {
+    CurrentUserContext,
+    CurrentUserContextValue,
+    initializeApollo,
+} from '@/shared/utils'
 
 const apolloClient = initializeApollo()
 
@@ -23,11 +27,13 @@ const App = (props: AppProps<WithAuthenticationProps>) => {
         !pathname.startsWith('/login') &&
         !pathname.startsWith('/register')
 
+    const currentUserContextValue = new CurrentUserContextValue(pageProps.user)
+
     return (
         <>
             <Head>
                 <title>
-                    Page title
+                    Kola
                 </title>
                 <meta
                     name="viewport"
@@ -35,21 +41,23 @@ const App = (props: AppProps<WithAuthenticationProps>) => {
                 />
             </Head>
             <ApolloProvider client={apolloClient}>
-                <MantineProvider
-                    withGlobalStyles={true}
-                    withNormalizeCSS={true}
-                    theme={{
-                        colorScheme: 'light',
-                    }}
-                >
-                    <GlobalStyles />
-                    <Notifications />
-                    {isAppAppRoute ? (
-                        <AppRoot>
-                            <Component {...pageProps} />
-                        </AppRoot>
-                    ) : <Component {...pageProps} />}
-                </MantineProvider>
+                <CurrentUserContext.Provider value={currentUserContextValue}>
+                    <MantineProvider
+                        withGlobalStyles={true}
+                        withNormalizeCSS={true}
+                        theme={{
+                            colorScheme: 'light',
+                        }}
+                    >
+                        <GlobalStyles />
+                        <Notifications />
+                        {isAppAppRoute ? (
+                            <AppRoot>
+                                <Component {...pageProps} />
+                            </AppRoot>
+                        ) : <Component {...pageProps} />}
+                    </MantineProvider>
+                </CurrentUserContext.Provider>
             </ApolloProvider>
         </>
     )

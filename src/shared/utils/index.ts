@@ -1,3 +1,4 @@
+export * from './currentUserContext'
 export * from './extractFormFieldErrors'
 export * from './initializeApollo'
 export * from './isServerSide'
