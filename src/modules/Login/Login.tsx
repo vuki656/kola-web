@@ -106,7 +106,7 @@ export const Login = () => {
                                 align="center"
                                 color="gray.7"
                             >
-                                Don't have an account? Register
+                                Don&apos;t have an account? Register
                             </Text>
                         </Link>
                     </Stack>

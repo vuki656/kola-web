@@ -15,9 +15,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/client@npm:^3.7.12":
-  version: 3.7.12
-  resolution: "@apollo/client@npm:3.7.12"
+"@apollo/client@npm:^3.7.13":
+  version: 3.7.13
+  resolution: "@apollo/client@npm:3.7.13"
   dependencies:
     "@graphql-typed-document-node/core": ^3.1.1
     "@wry/context": ^0.7.0
@@ -47,7 +47,7 @@ __metadata:
       optional: true
     subscriptions-transport-ws:
       optional: true
-  checksum: 9b9b0cd3b02d6b90ac4565737a1fa4d0e3c8e1f4cd0a0e1c680ed6f174f522469d16f0a71bc57ea358538b482c5085c33ae22d0d3cc42d90cef1c03b1f036e61
+  checksum: 9c8adfcb5da0ec8adaa1f7bc7c16bc6fa4e5ec171422ca985043d92e1012958f0ab9b1bcb5a25167c713995f0502f0240a807114941d48b118de34dbd9f63428
   languageName: node
   linkType: hard
 
@@ -1135,9 +1135,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/babel-plugin@npm:^11.10.6":
-  version: 11.10.6
-  resolution: "@emotion/babel-plugin@npm:11.10.6"
+"@emotion/babel-plugin@npm:^11.10.8":
+  version: 11.10.8
+  resolution: "@emotion/babel-plugin@npm:11.10.8"
   dependencies:
     "@babel/helper-module-imports": ^7.16.7
     "@babel/runtime": ^7.18.3
@@ -1149,21 +1149,21 @@ __metadata:
     escape-string-regexp: ^4.0.0
     find-root: ^1.1.0
     source-map: ^0.5.7
-    stylis: 4.1.3
-  checksum: 3eed138932e8edf2598352e69ad949b9db3051a4d6fcff190dacbac9aa838d7ef708b9f3e6c48660625d9311dae82d73477ae4e7a31139feef5eb001a5528421
+    stylis: 4.1.4
+  checksum: b8e2ed0c68a2ea423c5c2efdcf37e0b482dcb74caba042d2987a058f151819f0574fb2298fba4f76fa23265e1975dcf337f1f59ad6f35a33db2f9bf1afe03ee0
   languageName: node
   linkType: hard
 
-"@emotion/cache@npm:^11.10.5":
-  version: 11.10.7
-  resolution: "@emotion/cache@npm:11.10.7"
+"@emotion/cache@npm:^11.10.8":
+  version: 11.10.8
+  resolution: "@emotion/cache@npm:11.10.8"
   dependencies:
     "@emotion/memoize": ^0.8.0
     "@emotion/sheet": ^1.2.1
     "@emotion/utils": ^1.2.0
     "@emotion/weak-memoize": ^0.3.0
-    stylis: 4.1.3
-  checksum: 6b1efed2dffc93dac419409d91f6d57a200d858ec5ffa4b7c30080fdbd93db431ff86bb779c5b8830b8373f3c5dd754d9beb386604ed2667c7d55608ff653dfc
+    stylis: 4.1.4
+  checksum: a67751db54077813ee3a011f255ee5c79eb375284cec8404866d44da904d69b037566047ca52549772b8038f8cd00ebd092c628ddc764fe89d6932c16afd71e3
   languageName: node
   linkType: hard
 
@@ -1181,13 +1181,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.10.6":
-  version: 11.10.6
-  resolution: "@emotion/react@npm:11.10.6"
+"@emotion/react@npm:^11.10.8":
+  version: 11.10.8
+  resolution: "@emotion/react@npm:11.10.8"
   dependencies:
     "@babel/runtime": ^7.18.3
-    "@emotion/babel-plugin": ^11.10.6
-    "@emotion/cache": ^11.10.5
+    "@emotion/babel-plugin": ^11.10.8
+    "@emotion/cache": ^11.10.8
     "@emotion/serialize": ^1.1.1
     "@emotion/use-insertion-effect-with-fallbacks": ^1.0.0
     "@emotion/utils": ^1.2.0
@@ -1198,7 +1198,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 4762042e39126ffaffe76052dc65c9bb0ba6b8893013687ba3cc13ed4dd834c31597f1230684c3c078e90aecc13ab6cd0e3cde0dec8b7761affd2571f4d80019
+  checksum: ac56ef6375fa3bc7acd5a62eb5b2cf9eb4b1586a6a06cb05caab11a516700cf2f7857e0ad65bac57abd74e1141388e01fe65238f2de0075a912e129271c658b8
   languageName: node
   linkType: hard
 
@@ -2135,10 +2135,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:13.3.1":
-  version: 13.3.1
-  resolution: "@next/env@npm:13.3.1"
-  checksum: 3bf01e62b7de1de9de0cf7a5904364a2e807ad4f0a6cabfbb288225696a0750163bee23669bd45bfbec17dcf1fe66512212bdfa5be0a341ad187270a3cc27943
+"@next/env@npm:13.3.2":
+  version: 13.3.2
+  resolution: "@next/env@npm:13.3.2"
+  checksum: 4921cccfb966ea6da284164906485ac0013be18d957b8b83c98e2b4f7897eb81c07b151a3e6ed2a2508b5a5d329174efe5fa8b57163ad26db3c39001e66a4012
   languageName: node
   linkType: hard
 
@@ -2151,65 +2151,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:13.3.1":
-  version: 13.3.1
-  resolution: "@next/swc-darwin-arm64@npm:13.3.1"
+"@next/swc-darwin-arm64@npm:13.3.2":
+  version: 13.3.2
+  resolution: "@next/swc-darwin-arm64@npm:13.3.2"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:13.3.1":
-  version: 13.3.1
-  resolution: "@next/swc-darwin-x64@npm:13.3.1"
+"@next/swc-darwin-x64@npm:13.3.2":
+  version: 13.3.2
+  resolution: "@next/swc-darwin-x64@npm:13.3.2"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:13.3.1":
-  version: 13.3.1
-  resolution: "@next/swc-linux-arm64-gnu@npm:13.3.1"
+"@next/swc-linux-arm64-gnu@npm:13.3.2":
+  version: 13.3.2
+  resolution: "@next/swc-linux-arm64-gnu@npm:13.3.2"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:13.3.1":
-  version: 13.3.1
-  resolution: "@next/swc-linux-arm64-musl@npm:13.3.1"
+"@next/swc-linux-arm64-musl@npm:13.3.2":
+  version: 13.3.2
+  resolution: "@next/swc-linux-arm64-musl@npm:13.3.2"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:13.3.1":
-  version: 13.3.1
-  resolution: "@next/swc-linux-x64-gnu@npm:13.3.1"
+"@next/swc-linux-x64-gnu@npm:13.3.2":
+  version: 13.3.2
+  resolution: "@next/swc-linux-x64-gnu@npm:13.3.2"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:13.3.1":
-  version: 13.3.1
-  resolution: "@next/swc-linux-x64-musl@npm:13.3.1"
+"@next/swc-linux-x64-musl@npm:13.3.2":
+  version: 13.3.2
+  resolution: "@next/swc-linux-x64-musl@npm:13.3.2"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:13.3.1":
-  version: 13.3.1
-  resolution: "@next/swc-win32-arm64-msvc@npm:13.3.1"
+"@next/swc-win32-arm64-msvc@npm:13.3.2":
+  version: 13.3.2
+  resolution: "@next/swc-win32-arm64-msvc@npm:13.3.2"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-ia32-msvc@npm:13.3.1":
-  version: 13.3.1
-  resolution: "@next/swc-win32-ia32-msvc@npm:13.3.1"
+"@next/swc-win32-ia32-msvc@npm:13.3.2":
+  version: 13.3.2
+  resolution: "@next/swc-win32-ia32-msvc@npm:13.3.2"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:13.3.1":
-  version: 13.3.1
-  resolution: "@next/swc-win32-x64-msvc@npm:13.3.1"
+"@next/swc-win32-x64-msvc@npm:13.3.2":
+  version: 13.3.2
+  resolution: "@next/swc-win32-x64-msvc@npm:13.3.2"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -2329,6 +2329,22 @@ __metadata:
     tiny-glob: ^0.2.9
     tslib: ^2.4.0
   checksum: 118a1971120253740121a1db0a6658c21195b7da962acf9c124b507a3df707cfc97b0b84a16edcbd4352853b182e8337da9fc6e8e3d06c60d75ae4fb42321c75
+  languageName: node
+  linkType: hard
+
+"@playwright/test@npm:^1.33.0":
+  version: 1.33.0
+  resolution: "@playwright/test@npm:1.33.0"
+  dependencies:
+    "@types/node": "*"
+    fsevents: 2.3.2
+    playwright-core: 1.33.0
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    playwright: cli.js
+  checksum: cec3215fc92c1cb9f5bfba357ea1cbe97b54979ab82f9d34a2287b1687cda5e0966b8ea7290dcd35416e18668e56d5781b6b8c4cec64baf12f3ae8dde0f68f5e
   languageName: node
   linkType: hard
 
@@ -2543,12 +2559,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/helpers@npm:0.5.0":
-  version: 0.5.0
-  resolution: "@swc/helpers@npm:0.5.0"
+"@swc/helpers@npm:0.5.1":
+  version: 0.5.1
+  resolution: "@swc/helpers@npm:0.5.1"
   dependencies:
     tslib: ^2.4.0
-  checksum: 61c9c7dddb707deb58b85328cfe9d211887145f1311ae6a6e6c0fa9f781fb29916a8669a7d479e46e26a32a89d6ef4f293a22dee4925e009c84051e9dd10e8b7
+  checksum: 71e0e27234590435e4c62b97ef5e796f88e786841a38c7116a5e27a3eafa7b9ead7cdec5249b32165902076de78446945311c973e59bddf77c1e24f33a8f272a
   languageName: node
   linkType: hard
 
@@ -2637,10 +2653,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:18.16.1":
+"@types/node@npm:*":
   version: 18.16.1
   resolution: "@types/node@npm:18.16.1"
   checksum: 799026b949a48993cba7c9b81b2eabfdfb34c880744cb44c1c990fbedc9e315f3634d126eb2cf9a6e0795577c01016e2326d98565bef695ada9d363fadeb6946
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:18.16.3":
+  version: 18.16.3
+  resolution: "@types/node@npm:18.16.3"
+  checksum: 816b39d45b05ebdc6f362b630970df3f6d82f71d418a2555353522f4eeeb078fa201de5299f02c09a09faa975e43b2745fe19c263d44069f87ddf37d6c37b717
   languageName: node
   linkType: hard
 
@@ -5359,6 +5382,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fsevents@npm:2.3.2":
+  version: 2.3.2
+  resolution: "fsevents@npm:2.3.2"
+  dependencies:
+    node-gyp: latest
+  checksum: 97ade64e75091afee5265e6956cb72ba34db7819b4c3e94c431d4be2b19b8bb7a2d4116da417950c3425f17c8fe693d25e20212cac583ac1521ad066b77ae31f
+  conditions: os=darwin
+  languageName: node
+  linkType: hard
+
+"fsevents@patch:fsevents@2.3.2#~builtin<compat/fsevents>":
+  version: 2.3.2
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  dependencies:
+    node-gyp: latest
+  conditions: os=darwin
+  languageName: node
+  linkType: hard
+
 "function-bind@npm:^1.1.1":
   version: 1.1.1
   resolution: "function-bind@npm:1.1.1"
@@ -6654,8 +6696,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "kola-web@workspace:."
   dependencies:
-    "@apollo/client": ^3.7.12
-    "@emotion/react": ^11.10.6
+    "@apollo/client": ^3.7.13
+    "@emotion/react": ^11.10.8
     "@emotion/server": ^11.10.0
     "@graphql-codegen/cli": ^3.3.1
     "@graphql-codegen/fragment-matcher": ^4.0.1
@@ -6668,10 +6710,11 @@ __metadata:
     "@mantine/hooks": ^6.0.9
     "@mantine/next": ^6.0.9
     "@mantine/notifications": ^6.0.9
+    "@playwright/test": ^1.33.0
     "@rimac-technology/style-guide": ^7.0.0
     "@tabler/icons-react": ^2.17.0
     "@types/eslint": ^8.37.0
-    "@types/node": 18.16.1
+    "@types/node": 18.16.3
     "@types/prettier": ^2.7.2
     "@types/react": 18.2.0
     "@types/react-dom": 18.2.1
@@ -6679,7 +6722,7 @@ __metadata:
     cspell: ^6.31.1
     eslint: ^8.39.0
     graphql: ^16.6.0
-    next: 13.3.1
+    next: 13.3.2
     npm-package-json-lint: ^6.4.0
     pino: ^8.11.0
     pino-pretty: ^10.0.0
@@ -7163,21 +7206,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:13.3.1":
-  version: 13.3.1
-  resolution: "next@npm:13.3.1"
+"next@npm:13.3.2":
+  version: 13.3.2
+  resolution: "next@npm:13.3.2"
   dependencies:
-    "@next/env": 13.3.1
-    "@next/swc-darwin-arm64": 13.3.1
-    "@next/swc-darwin-x64": 13.3.1
-    "@next/swc-linux-arm64-gnu": 13.3.1
-    "@next/swc-linux-arm64-musl": 13.3.1
-    "@next/swc-linux-x64-gnu": 13.3.1
-    "@next/swc-linux-x64-musl": 13.3.1
-    "@next/swc-win32-arm64-msvc": 13.3.1
-    "@next/swc-win32-ia32-msvc": 13.3.1
-    "@next/swc-win32-x64-msvc": 13.3.1
-    "@swc/helpers": 0.5.0
+    "@next/env": 13.3.2
+    "@next/swc-darwin-arm64": 13.3.2
+    "@next/swc-darwin-x64": 13.3.2
+    "@next/swc-linux-arm64-gnu": 13.3.2
+    "@next/swc-linux-arm64-musl": 13.3.2
+    "@next/swc-linux-x64-gnu": 13.3.2
+    "@next/swc-linux-x64-musl": 13.3.2
+    "@next/swc-win32-arm64-msvc": 13.3.2
+    "@next/swc-win32-ia32-msvc": 13.3.2
+    "@next/swc-win32-x64-msvc": 13.3.2
+    "@swc/helpers": 0.5.1
     busboy: 1.6.0
     caniuse-lite: ^1.0.30001406
     postcss: 8.4.14
@@ -7219,7 +7262,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: a685abbcfe028940f8e3c86f6712fadcba1ca92c68b4dddfd1192d93a4ebac2d0947cd62d8cecf530afbd8163b2ef6dfe338b1fe7b699d78bc7123624a7622db
+  checksum: dad2469eda0b5dff1d5eddf1fdc473c7e25daf7821c4779edc8d804f972c2b81403ca0c9ec1765f617487cd661fd0647a9c7651db7c1fcbb76f0039f4dae5ca5
   languageName: node
   linkType: hard
 
@@ -7829,6 +7872,15 @@ __metadata:
   bin:
     pino: bin.js
   checksum: 1bcc2b9b448ec9ccef4ea189d5db7d1e0e085f6cd4d7395d087998d90186850ab176edf32a179562337a557aa51eb551ff6318a40af7cdb5963b168f87d35aa8
+  languageName: node
+  linkType: hard
+
+"playwright-core@npm:1.33.0":
+  version: 1.33.0
+  resolution: "playwright-core@npm:1.33.0"
+  bin:
+    playwright: cli.js
+  checksum: 5fb7bda06a8b73b56b85b5a0b8f711211dde57a375d9379289e22239b2de879c6d93c8fdc9ba44b932bf100914ab1ca1a55697ad88440fdd0a39101fc020b77f
   languageName: node
   linkType: hard
 
@@ -9039,10 +9091,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylis@npm:4.1.3":
-  version: 4.1.3
-  resolution: "stylis@npm:4.1.3"
-  checksum: d04dbffcb9bf2c5ca8d8dc09534203c75df3bf711d33973ea22038a99cc475412a350b661ebd99cbc01daa50d7eedcf0d130d121800eb7318759a197023442a6
+"stylis@npm:4.1.4":
+  version: 4.1.4
+  resolution: "stylis@npm:4.1.4"
+  checksum: cd929bd89709def13b47e6c16b11317bf996a09b4e987fc45a235549c3adf49d41531e017d7df511daa095bc9468c923ae9094a934fe9c62440b7351874dafb7
   languageName: node
   linkType: hard
 

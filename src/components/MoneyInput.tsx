@@ -1,7 +1,10 @@
+/* Regex is copied from https://mantine.dev/core/number-input/#parser-and-formatter */
+/* eslint-disable unicorn/no-unsafe-regex */
+/* eslint-disable require-unicode-regexp */
+
 import type { NumberInputProps } from '@mantine/core'
 import { NumberInput } from '@mantine/core'
 
-// Taken from https://mantine.dev/core/number-input/#parser-and-formatter
 export const MoneyInput = (props: NumberInputProps) => {
     const { ...other } = props
 
