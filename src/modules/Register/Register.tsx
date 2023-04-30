@@ -10,9 +10,11 @@ import {
 } from '@mantine/core'
 import { showNotification } from '@mantine/notifications'
 import {
+    Icon123,
     IconAt,
     IconId,
     IconPassword,
+    IconPhone,
 } from '@tabler/icons-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -32,9 +34,12 @@ export const Register = () => {
 
     const [createUserMutation, { loading }] = useCreateUserMutation({
         onCompleted: () => {
+            // TODO: should prob send cookie here and set it since it redirects to / and then to /login since cookie was never set
             void router.push('/')
         },
-        onError: () => {
+        onError: (error) => {
+            // TODO: parse expected errors and show appropriate error
+
             showNotification({
                 color: 'red',
                 message: 'Unable to register, try again.',
@@ -54,7 +59,9 @@ export const Register = () => {
                     email: formValue.email,
                     firstName: formValue.firstName,
                     lastName: formValue.lastName,
+                    oib: formValue.oib,
                     password: formValue.password,
+                    phoneNumber: formValue.phoneNumber,
                 },
             },
         })
@@ -109,6 +116,28 @@ export const Register = () => {
                             type="email"
                             errorProps={{
                                 [DATA_TEST_ID]: RegisterTestIds.fieldErrors.email,
+                            }}
+                        />
+                        <TextInput
+                            {...register('oib')}
+                            {...extractFormFieldErrors(formState.errors.oib)}
+                            icon={<Icon123 size={FORM_ICON_SIZE_PX} />}
+                            data-testid={RegisterTestIds.fields.oib}
+                            placeholder="OIB"
+                            type="number"
+                            errorProps={{
+                                [DATA_TEST_ID]: RegisterTestIds.fieldErrors.oib,
+                            }}
+                        />
+                        <TextInput
+                            {...register('phoneNumber')}
+                            {...extractFormFieldErrors(formState.errors.phoneNumber)}
+                            icon={<IconPhone size={FORM_ICON_SIZE_PX} />}
+                            data-testid={RegisterTestIds.fields.phoneNumber}
+                            placeholder="Phone Number"
+                            type="number"
+                            errorProps={{
+                                [DATA_TEST_ID]: RegisterTestIds.fieldErrors.phoneNumber,
                             }}
                         />
                         <PasswordInput

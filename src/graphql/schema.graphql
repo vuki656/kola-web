@@ -27,10 +27,10 @@ type Mutation {
     createListing(input: CreateListingInput!): CreateListingPayload!
     deleteListing(input: DeleteListingInput!): DeleteListingPayload!
     updateListing(input: UpdateListingInput!): UpdateListingPayload!
+    changeUserPassword(input: ChangeUserPasswordInput!): ChangeUserPasswordPayload!
     createUser(input: CreateUserInput!): CreateUserPayload!
     deleteUser(input: DeleteUserInput!): DeleteUserPayload!
     loginUser(input: LoginUserInput!): LoginUserPayload!
-    logoutUser: LogoutUserPayload!
     updateUser(input: UpdateUserInput!): UpdateUserPayload!
 }
 
@@ -71,7 +71,9 @@ input CreateUserInput {
     email: String!
     firstName: String!
     lastName: String!
+    oib: String!
     password: String!
+    phoneNumber: String!
 }
 
 input UpdateUserInput {
@@ -79,6 +81,8 @@ input UpdateUserInput {
     firstName: String!
     id: ID!
     lastName: String!
+    oib: String!
+    phoneNumber: String!
 }
 
 input DeleteUserInput {
@@ -88,6 +92,11 @@ input DeleteUserInput {
 input LoginUserInput {
     email: String!
     password: String!
+}
+
+input ChangeUserPasswordInput {
+    currentPassword: String!
+    newPassword: String!
 }
 
 type CreateUserPayload {
@@ -107,7 +116,7 @@ type LoginUserPayload {
     user: User!
 }
 
-type LogoutUserPayload {
+type ChangeUserPasswordPayload {
     success: Boolean!
 }
 
@@ -115,8 +124,11 @@ type User {
     email: String!
     firstName: String!
     id: ID!
+    isAdmin: Boolean!
     lastName: String!
     listings: [Listing!]!
+    oib: String!
+    phoneNumber: String!
 }
 
 schema {
