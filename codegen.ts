@@ -1,6 +1,5 @@
 import type { CodegenConfig } from '@graphql-codegen/cli'
 
-// TODO: generate graphql queries and mutations
 const config: CodegenConfig = {
     overwrite: true,
     schema: ['./src/graphql/schema.graphql'],

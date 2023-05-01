@@ -26,6 +26,7 @@ import type { RegisterFormValueType } from './Register.types'
 import { registerFormValidation } from './Register.validation'
 
 import { useCreateUserMutation } from '@/graphql/types.generated'
+import { ApiErrorCode } from '@/shared/apiErrorCode'
 import {
     COOKIE_TOKEN_NAME,
     FORM_ICON_SIZE_PX,
@@ -43,7 +44,15 @@ export const Register = () => {
             void router.push('/')
         },
         onError: (error) => {
-            // TODO: parse expected errors and show appropriate error
+            if (error.graphQLErrors[0].extensions.code === ApiErrorCode.INPUT) {
+                showNotification({
+                    color: 'red',
+                    message: error.graphQLErrors[0].message,
+                    title: 'Error',
+                })
+
+                return
+            }
 
             showNotification({
                 color: 'red',
