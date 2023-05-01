@@ -28,7 +28,7 @@
         "@tabler/icons-react": "^2.17.0",
         "cookies-next": "^2.1.1",
         "graphql": "^16.6.0",
-        "next": "13.3.2",
+        "next": "13.3.4",
         "next-logger": "^3.0.2",
         "pino": "^8.11.0",
         "react": "18.2.0",
