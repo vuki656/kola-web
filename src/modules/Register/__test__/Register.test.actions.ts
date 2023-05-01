@@ -58,8 +58,12 @@ export class RegisterTestActions {
         expect(await this.locators.getPasswordConfirmationFieldErrorText()).toContain(RegisterFormValidationErrors.required)
     }
 
-    public async checkUserIsRedirectedToHome() {
-        await expect(this.page).toHaveURL('http://localhost:3000/')
+    public async checkUserRedirectedToHome() {
+        await expect(this.page).toHaveURL(TEST_DEV_SERVER_URL)
+    }
+
+    public async checkUserRedirectedToLogin() {
+        await expect(this.page).toHaveURL(`${TEST_DEV_SERVER_URL}/login`)
     }
 
     public async checkWrongInputErrorMessagesShown() {
@@ -78,6 +82,10 @@ export class RegisterTestActions {
         await this.locators.getPasswordConfirmationField().clear()
         await this.locators.getPhoneNumberField().clear()
         await this.locators.getOibField().clear()
+    }
+
+    public async clickLoginButton() {
+        await this.locators.getLoginButton().click()
     }
 
     public async clickRegisterButton() {

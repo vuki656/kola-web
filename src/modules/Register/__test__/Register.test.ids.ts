@@ -1,5 +1,6 @@
 export const RegisterTestIds = {
     buttons: {
+        login: 'login-button',
         register: 'register-submit-button',
     },
     fieldErrors: {

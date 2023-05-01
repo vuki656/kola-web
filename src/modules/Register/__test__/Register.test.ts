@@ -22,7 +22,7 @@ test.describe('Register page', () => {
         await actions.typeCorrectInput()
         await actions.checkErrorMessagesNotShown()
         await actions.clickRegisterButton()
-        await actions.checkUserIsRedirectedToHome()
+        await actions.checkUserRedirectedToHome()
         await actions.goToRegisterPage()
         await actions.typeExistingEmail()
         await actions.clickRegisterButton()
@@ -31,5 +31,12 @@ test.describe('Register page', () => {
         await actions.typeExistingOib()
         await actions.clickRegisterButton()
         await actions.checkExistingOibNotificationShown()
+    })
+
+    test('should navigate to login page', async ({ page }) => {
+        const actions = new RegisterTestActions(page)
+
+        await actions.clickLoginButton()
+        await actions.checkUserRedirectedToLogin()
     })
 })

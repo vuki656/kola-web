@@ -53,6 +53,10 @@ export class RegisterTestLocators {
         return this.getLastNameFieldError().textContent()
     }
 
+    public getLoginButton() {
+        return this.page.getByTestId(RegisterTestIds.buttons.login)
+    }
+
     public getOibField() {
         return this.page.getByTestId(RegisterTestIds.fields.oib)
     }

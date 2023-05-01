@@ -188,6 +188,7 @@ export const Register = () => {
                                 size="xs"
                                 align="center"
                                 color="gray.7"
+                                data-testid={RegisterTestIds.buttons.login}
                             >
                                 Already have an account? Login
                             </Text>
