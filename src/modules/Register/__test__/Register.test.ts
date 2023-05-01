@@ -19,11 +19,6 @@ test.describe('Register page', () => {
         await actions.typeNonMatchingPasswords()
         await actions.checkNonMatchingPasswordErrorShown()
         await actions.clearAllFields()
-        await actions.typeCorrectInput()
-        await actions.checkErrorMessagesNotShown()
-        await actions.clickRegisterButton()
-        await actions.checkUserRedirectedToHome()
-        await actions.goToRegisterPage()
         await actions.typeExistingEmail()
         await actions.clickRegisterButton()
         await actions.checkExistingEmailNotificationShown()
@@ -31,6 +26,11 @@ test.describe('Register page', () => {
         await actions.typeExistingOib()
         await actions.clickRegisterButton()
         await actions.checkExistingOibNotificationShown()
+        await actions.clearAllFields()
+        await actions.typeCorrectInput()
+        await actions.checkErrorMessagesNotShown()
+        await actions.clickRegisterButton()
+        await actions.checkUserRedirectedToHome()
     })
 
     test('should navigate to login page', async ({ page }) => {

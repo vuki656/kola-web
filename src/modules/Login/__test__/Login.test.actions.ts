@@ -3,7 +3,7 @@ import type { Page } from '@playwright/test'
 import { expect } from '@playwright/test'
 
 import { TEST_DEV_SERVER_URL } from '../../../shared/test/constants'
-import { TEST_DATA } from '../../../shared/test/data'
+import { PERSISTENT_TEST_DATA } from '../../../shared/test/data'
 import { LoginFormValidationErrors } from '../Login.validation'
 
 import { LoginTestLocators } from './Login.test.locators'
@@ -53,8 +53,8 @@ export class LoginTestActions {
     }
 
     public async typeCorrectCredentials() {
-        await this.locators.getEmailField().type(TEST_DATA.user.email)
-        await this.locators.getPasswordField().type(TEST_DATA.user.password)
+        await this.locators.getEmailField().type(PERSISTENT_TEST_DATA.user.email)
+        await this.locators.getPasswordField().type(PERSISTENT_TEST_DATA.user.password)
     }
 
     public async typeCredentialsWithWrongEmail() {
@@ -63,7 +63,7 @@ export class LoginTestActions {
     }
 
     public async typeCredentialsWithWrongPassword() {
-        await this.locators.getEmailField().type(TEST_DATA.user.email)
+        await this.locators.getEmailField().type(PERSISTENT_TEST_DATA.user.email)
         await this.locators.getPasswordField().type(faker.internet.password())
     }
 

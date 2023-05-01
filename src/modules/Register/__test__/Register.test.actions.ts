@@ -7,13 +7,13 @@ import {
     PHONE_NUMBER_LENGTH,
 } from '../../../shared/constants'
 import { TEST_DEV_SERVER_URL } from '../../../shared/test/constants'
+import { PERSISTENT_TEST_DATA } from '../../../shared/test/data'
 import { RegisterFormValidationErrors } from '../Register.validation'
 
 import { RegisterTestLocators } from './Register.test.locators'
 
 export class RegisterTestActions {
     private data = {
-        email: faker.internet.email(),
         oib: [...new Array(OIB_LENGTH)]
             .map(() => faker.datatype.number({ max: 9, min: 0 }))
             .join(),
@@ -120,12 +120,12 @@ export class RegisterTestActions {
     public async typeExistingEmail() {
         await this.typeCorrectInput()
         await this.locators.getEmailField().clear()
-        await this.locators.getEmailField().type(this.data.email)
+        await this.locators.getEmailField().type(PERSISTENT_TEST_DATA.user.email)
     }
 
     public async typeExistingOib() {
         await this.locators.getOibField().clear()
-        await this.locators.getOibField().type(this.data.oib)
+        await this.locators.getOibField().type(PERSISTENT_TEST_DATA.user.oib)
     }
 
     public async typeNonMatchingPasswords() {
