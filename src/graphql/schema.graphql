@@ -101,6 +101,7 @@ input ChangeUserPasswordInput {
 
 type CreateUserPayload {
     user: User!
+    token: String!
 }
 
 type DeleteUserPayload {

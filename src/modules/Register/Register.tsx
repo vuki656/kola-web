@@ -16,6 +16,7 @@ import {
     IconPassword,
     IconPhone,
 } from '@tabler/icons-react'
+import { setCookie } from 'cookies-next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
@@ -25,7 +26,10 @@ import type { RegisterFormValueType } from './Register.types'
 import { registerFormValidation } from './Register.validation'
 
 import { useCreateUserMutation } from '@/graphql/types.generated'
-import { FORM_ICON_SIZE_PX } from '@/shared/constants'
+import {
+    COOKIE_TOKEN_NAME,
+    FORM_ICON_SIZE_PX,
+} from '@/shared/constants'
 import { DATA_TEST_ID } from '@/shared/test/constants'
 import { extractFormFieldErrors } from '@/shared/utils'
 
@@ -33,8 +37,9 @@ export const Register = () => {
     const router = useRouter()
 
     const [createUserMutation, { loading }] = useCreateUserMutation({
-        onCompleted: () => {
-            // TODO: should prob send cookie here and set it since it redirects to / and then to /login since cookie was never set
+        onCompleted: (response) => {
+            setCookie(COOKIE_TOKEN_NAME, response.createUser.token)
+
             void router.push('/')
         },
         onError: (error) => {
