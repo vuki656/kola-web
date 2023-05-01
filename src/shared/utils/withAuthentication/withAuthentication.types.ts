@@ -1,4 +1,4 @@
-import type { GetCurrentUserQuery } from '@/graphql/types.generated'
+import type { GetCurrentUserQuery } from '../../../graphql/types.generated'
 
 export type CurrentUserType = GetCurrentUserQuery['currentUser']
 

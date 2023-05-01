@@ -21,18 +21,18 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
 
-import { RegisterTestIds } from './__test__/Register.test.ids'
-import type { RegisterFormValueType } from './Register.types'
-import { registerFormValidation } from './Register.validation'
-
-import { useCreateUserMutation } from '@/graphql/types.generated'
-import { ApiErrorCode } from '@/shared/apiErrorCode'
+import { useCreateUserMutation } from '../../graphql/types.generated'
+import { ApiErrorCode } from '../../shared/apiErrorCode'
 import {
     COOKIE_TOKEN_NAME,
     FORM_ICON_SIZE_PX,
-} from '@/shared/constants'
-import { DATA_TEST_ID } from '@/shared/test/constants'
-import { extractFormFieldErrors } from '@/shared/utils'
+} from '../../shared/constants'
+import { DATA_TEST_ID } from '../../shared/test/constants'
+import { extractFormFieldErrors } from '../../shared/utils'
+
+import { RegisterTestIds } from './__test__/Register.test.ids'
+import type { RegisterFormValueType } from './Register.types'
+import { registerFormValidation } from './Register.validation'
 
 export const Register = () => {
     const router = useRouter()

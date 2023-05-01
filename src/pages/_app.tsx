@@ -8,13 +8,13 @@ import { useRouter } from 'next/router'
 import {
     AppRoot,
     GlobalStyles,
-} from '@/components'
-import type { WithAuthenticationProps } from '@/shared/utils'
+} from '../components'
+import type { WithAuthenticationProps } from '../shared/utils'
 import {
     CurrentUserContext,
     CurrentUserContextValue,
     initializeApollo,
-} from '@/shared/utils'
+} from '../shared/utils'
 
 const apolloClient = initializeApollo()
 

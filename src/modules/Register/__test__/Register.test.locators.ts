@@ -21,6 +21,14 @@ export class RegisterTestLocators {
         return this.getEmailFieldError().textContent()
     }
 
+    public getExistingEmailErrorNotification() {
+        return this.page.getByText('Email already in use')
+    }
+
+    public getExistingOibErrorNotification() {
+        return this.page.getByText('Oib already in use')
+    }
+
     public getFirstNameField() {
         return this.page.getByTestId(RegisterTestIds.fields.firstName)
     }
@@ -45,6 +53,18 @@ export class RegisterTestLocators {
         return this.getLastNameFieldError().textContent()
     }
 
+    public getOibField() {
+        return this.page.getByTestId(RegisterTestIds.fields.oib)
+    }
+
+    public getOibFieldError() {
+        return this.page.getByTestId(RegisterTestIds.fieldErrors.oib)
+    }
+
+    public async getOibFieldErrorText() {
+        return this.getOibFieldError().textContent()
+    }
+
     public getPasswordConfirmationField() {
         return this.page.getByTestId(RegisterTestIds.fields.passwordConfirmation)
     }
@@ -67,6 +87,18 @@ export class RegisterTestLocators {
 
     public async getPasswordFieldErrorText() {
         return this.page.getByTestId(RegisterTestIds.fieldErrors.password).textContent()
+    }
+
+    public getPhoneNumberField() {
+        return this.page.getByTestId(RegisterTestIds.fields.phoneNumber)
+    }
+
+    public getPhoneNumberFieldError() {
+        return this.page.getByTestId(RegisterTestIds.fieldErrors.phoneNumber)
+    }
+
+    public async getPhoneNumberFieldErrorText() {
+        return this.getPhoneNumberFieldError().textContent()
     }
 
     public getRegisterButton() {

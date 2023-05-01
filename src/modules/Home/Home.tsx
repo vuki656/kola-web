@@ -1,4 +1,4 @@
-import { useGetListingsQuery } from '@/graphql/types.generated'
+import { useGetListingsQuery } from '../../graphql/types.generated'
 
 export const Home = () => {
     useGetListingsQuery()

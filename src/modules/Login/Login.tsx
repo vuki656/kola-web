@@ -18,15 +18,15 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
 
-import type { LoginFormValueType } from './Login.types'
-import { loginFormValidation } from './Login.validation'
-
-import { useLoginUserMutation } from '@/graphql/types.generated'
+import { useLoginUserMutation } from '../../graphql/types.generated'
 import {
     COOKIE_TOKEN_NAME,
     FORM_ICON_SIZE_PX,
-} from '@/shared/constants'
-import { extractFormFieldErrors } from '@/shared/utils'
+} from '../../shared/constants'
+import { extractFormFieldErrors } from '../../shared/utils'
+
+import type { LoginFormValueType } from './Login.types'
+import { loginFormValidation } from './Login.validation'
 
 export const Login = () => {
     const router = useRouter()

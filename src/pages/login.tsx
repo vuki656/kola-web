@@ -1,4 +1,4 @@
-import { Login } from '@/modules'
+import { Login } from '../modules'
 
 const LoginPage = () => {
     return (

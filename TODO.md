@@ -1,2 +1,1 @@
--   [ ] Auth
 -   [ ] Stricter form validation

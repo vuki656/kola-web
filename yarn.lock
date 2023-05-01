@@ -1311,6 +1311,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@faker-js/faker@npm:^7.6.0":
+  version: 7.6.0
+  resolution: "@faker-js/faker@npm:7.6.0"
+  checksum: 942af6221774e8c98a0eb6bc75265e05fb81a941170377666c3439aab9495dd321d6beedc5406f07e6ad44262b3e43c20961f666d116ad150b78e7437dd1bb2b
+  languageName: node
+  linkType: hard
+
 "@floating-ui/core@npm:^1.2.6":
   version: 1.2.6
   resolution: "@floating-ui/core@npm:1.2.6"
@@ -6699,6 +6706,7 @@ __metadata:
     "@apollo/client": ^3.7.13
     "@emotion/react": ^11.10.8
     "@emotion/server": ^11.10.0
+    "@faker-js/faker": ^7.6.0
     "@graphql-codegen/cli": ^3.3.1
     "@graphql-codegen/fragment-matcher": ^4.0.1
     "@graphql-codegen/introspection": ^3.0.1

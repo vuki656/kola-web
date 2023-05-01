@@ -1,5 +1,5 @@
-import { Home } from '@/modules'
-import { withAuthentication } from '@/shared/utils'
+import { Home } from '../modules'
+import { withAuthentication } from '../shared/utils'
 
 export const getServerSideProps = withAuthentication()
 

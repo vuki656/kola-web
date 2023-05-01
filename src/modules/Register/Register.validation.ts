@@ -1,5 +1,10 @@
 import { z } from 'zod'
 
+import {
+    OIB_LENGTH,
+    PHONE_NUMBER_LENGTH,
+} from '../../shared/constants'
+
 export const RegisterFormValidationErrors = {
     invalidEmail: 'Incorrect email',
     invalidOib: 'Invalid OIB',
@@ -24,8 +29,8 @@ export const registerFormValidation = z
         oib: z
             .string()
             .min(1, RegisterFormValidationErrors.required)
-            .min(11, RegisterFormValidationErrors.invalidOib)
-            .max(11, RegisterFormValidationErrors.invalidOib),
+            .min(OIB_LENGTH, RegisterFormValidationErrors.invalidOib)
+            .max(OIB_LENGTH, RegisterFormValidationErrors.invalidOib),
         password: z
             .string()
             .min(1, RegisterFormValidationErrors.required)
@@ -37,8 +42,8 @@ export const registerFormValidation = z
         phoneNumber: z
             .string()
             .min(1, RegisterFormValidationErrors.required)
-            .min(10, RegisterFormValidationErrors.invalidPhoneNumber)
-            .max(10, RegisterFormValidationErrors.invalidPhoneNumber),
+            .min(PHONE_NUMBER_LENGTH, RegisterFormValidationErrors.invalidPhoneNumber)
+            .max(PHONE_NUMBER_LENGTH, RegisterFormValidationErrors.invalidPhoneNumber),
     })
     .refine(
         ({ password, passwordConfirmation }) => {

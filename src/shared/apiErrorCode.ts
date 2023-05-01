@@ -1,3 +1,3 @@
 export enum ApiErrorCode {
-    INPUT = "INPUT"
+    INPUT = 'INPUT'
 }
