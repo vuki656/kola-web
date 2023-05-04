@@ -110,7 +110,7 @@ export class RegisterTestActions {
 
         await this.locators.getFirstNameField().type(faker.name.firstName())
         await this.locators.getLastNameField().type(faker.name.lastName())
-        await this.locators.getEmailField().type(this.data.email)
+        await this.locators.getEmailField().type(faker.internet.email())
         await this.locators.getPasswordField().type(PASSWORD)
         await this.locators.getPasswordConfirmationField().type(PASSWORD)
         await this.locators.getOibField().type(this.data.oib)
